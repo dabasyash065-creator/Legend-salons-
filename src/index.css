@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #D4AF37;
+  --color-primary-dark: #AA8B2E;
+  --color-luxury-black: #080808;
+  --color-luxury-card: #121212;
+  --color-luxury-muted: #A0A0A0;
+  --color-luxury-border: rgba(212, 175, 55, 0.2);
+  
+  --font-serif: Georgia, serif;
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  
+  --animate-fade-up: fade-up 0.5s ease-out forwards;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-luxury-black text-white font-sans antialiased;
+}
+
+.serif {
+  @apply font-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AA8B2E;
+}
+
+/* Sleek card effect */
+.sleek-card {
+  @apply bg-luxury-card border border-luxury-border rounded-[4px] overflow-hidden;
+}
+
+.sleek-input {
+  @apply w-full bg-white/5 border border-luxury-border p-2 text-white text-xs outline-none focus:border-primary transition-colors;
+}
+
+.sleek-btn-primary {
+  @apply bg-primary text-black font-bold uppercase tracking-wider text-xs py-3 px-6 hover:bg-primary-dark transition-all;
+}
+
+.sleek-btn-outline {
+  @apply bg-transparent border border-primary text-primary font-bold uppercase tracking-wider text-xs py-3 px-6 hover:bg-primary/5 transition-all;
+}
+
